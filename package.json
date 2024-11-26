@@ -15,7 +15,7 @@
     "build": "cross-env NODE_ENV=production vite build",
     "postinstall": "cpy --flat ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./src/fonts/",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d www"
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     "IOS >= 15",
