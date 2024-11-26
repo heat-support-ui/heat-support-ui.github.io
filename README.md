@@ -6,7 +6,7 @@ Framework7 app created with following options:
 
 ```
 {
-  "cwd": "/Users/evgeniievstafev/PycharmProjects/pr/heat-support-ui.github.io",
+  "cwd": "/heat-support-ui.github.io",
   "type": [
     "web"
   ],
