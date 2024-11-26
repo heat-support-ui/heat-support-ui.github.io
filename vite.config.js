@@ -9,6 +9,7 @@ export default async () => {
   return {
     plugins: [react()],
     root: SRC_DIR,
+    base: '/',
     publicDir: PUBLIC_DIR,
     build: {
       outDir: BUILD_DIR,
