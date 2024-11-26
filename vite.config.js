@@ -3,16 +3,16 @@ import react from '@vitejs/plugin-react';
 
 const SRC_DIR = path.resolve(__dirname, './src');
 const PUBLIC_DIR = path.resolve(__dirname, './public');
-const BUILD_DIR = path.resolve(__dirname, './docs'); // Changed to 'docs'
+const BUILD_DIR = path.resolve(__dirname, './build');
 
 export default async () => {
   return {
     plugins: [react()],
     root: SRC_DIR,
-    base: '/', // Set base to '/' for GitHub Pages
+    base: '/',
     publicDir: PUBLIC_DIR,
     build: {
-      outDir: BUILD_DIR, // Output to 'docs' folder
+      outDir: BUILD_DIR,
       assetsInlineLimit: 0,
       emptyOutDir: true,
       rollupOptions: {
