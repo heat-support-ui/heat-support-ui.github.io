@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   App,
+  BlockFooter,
   View,
   Page,
   Navbar,
   LoginScreen,
   LoginScreenTitle,
-  BlockFooter
+  Link,
+  NavTitle,
+  Preloader,
+  f7ready,
+  f7
 } from 'framework7-react';
-
-import routes from '../js/routes';
-import store from '../js/store';
 
 const GA_CLIENT_ID = '1092393785652-eluon044pa7rn4mdhus9jct1j0t9cua9.apps.googleusercontent.com';
 
-const MyApp = () => {
+
+function MyApp() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -45,11 +48,10 @@ const MyApp = () => {
     setIsAuthenticated(true);
     console.log('User authenticated with Google OAuth:', token);
   };
-
   return (
-    <App name="Cambridge Support" theme="auto" store={store} routes={routes}>
+    <App name="Cambridge Support" theme="ios">
       {!isAuthenticated ? (
-        <LoginScreen id="my-login-screen" opened={!isAuthenticated}>
+      <LoginScreen id="my-login-screen" opened={!isAuthenticated}>
           <View>
             <Page loginScreen>
               <LoginScreenTitle>Login with Google</LoginScreenTitle>
@@ -73,11 +75,17 @@ const MyApp = () => {
               </BlockFooter>
             </Page>
           </View>
-        </LoginScreen>
-
+      </LoginScreen>
       ) : (
-        <View main className="safe-areas" url="/" />
-      )}
+
+      <View main className="safe-areas" url="/">
+        <Page>
+          <Navbar>
+            <NavTitle>Cambridge Support</NavTitle>
+          </Navbar>
+        </Page>
+      </View>
+        )}
     </App>
   );
 }
